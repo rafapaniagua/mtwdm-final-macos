@@ -1,0 +1,54 @@
+{% extends 'inicio/layout.html' %}
+
+{% block title %}Bebidas{% endblock %}
+
+{% block content %}
+<!-- Start All Pages -->
+<div class="all-page-title page-breadcrumb">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Menú de bebidas</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End All Pages -->
+
+<!-- Start Menu -->
+<div class="menu-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="heading-title text-center">
+          <h2>Menú de bebidas</h2>
+          <p>Las mejores bebidas preparadas por nuestros expertos</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row inner-menu-box">
+      <div class="col-12">
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+            <div class="row">
+              {% for drink in drinks %}
+              <div class="col-lg-4 col-md-6 special-grid drinks">
+                <div class="gallery-single fix">
+                  <img src="{{drink.strDrinkThumb}}" class="img-fluid" alt="Image">
+                  <div class="why-text">
+                    <h4>{{drink.strDrink}}</h4>
+                    <p>{{drink.strAlcoholic}}</p>
+                    <h5>{{drink.strCategory}}</h5>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Menu -->
+{% endblock %}
